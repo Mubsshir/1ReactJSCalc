@@ -1,0 +1,34 @@
+.keysContainer {
+  height: 40em;
+  background-color: #797979;
+  width: 100%;
+  margin: 8px 0;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 0.5rem;
+  gap: 5px;
+}
+
+.keys {
+  background-color: #080808;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0.6rem 0 #030303;
+  font-weight: 600;
+  font-size: 20px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+#plusKey {
+  grid-area: 5/4 / span 2 / span 1;
+}
+#CE {
+  background-color: #f4670b;
+}

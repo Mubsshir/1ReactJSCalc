@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+.calHeader {
+  background-color: rgb(162, 167, 172);
+  height: 20%;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+}
+.calHeader img {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+  height: 20px;
+}
+
+.display,
+.offDisplay {
+  margin: 2% 0;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 4px;
+  height: 50%;
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: right;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+.display {
+  background-color: #f1ffcc;
+}
+.offDisplay {
+  background-color: #4c4f44;
+}
+
+@media screen and (max-width: 575px) {
+  .display {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+}
