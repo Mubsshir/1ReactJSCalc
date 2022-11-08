@@ -23,155 +23,159 @@ export const ContextProvider = (props) => {
 
     //#region  Display handler
     const DisplayHandler = (payload) => {
-        if (isOn) {
-            play();
-        }
-        if (payload === "+" || payload === "-" || payload === "/" || payload === "*" || payload === "%") {
-            if (!isNaN(displayText)) {
-                if (operand === null) {
-                    setOprand(displayText + payload);
-                    setDisplayText("")
-                    return;
-                }
-                else {
-                    setDisplayText(eval(operand + displayText))
-                    setOprand(null)
-                    return;
+        try {
+            if (isOn) {
+                play();
+            }
+            if (payload === "+" || payload === "-" || payload === "/" || payload === "*" || payload === "%") {
+                if (!isNaN(displayText)) {
+                    if (operand === null) {
+                        setOprand(displayText + payload);
+                        setDisplayText("")
+                        return;
+                    }
+                    else {
+                        setDisplayText(eval(operand + displayText))
+                        setOprand(null)
+                        return;
+                    }
                 }
             }
-        }
-        if (payload === "=") {
-            if (!isNaN(displayText)) {
-                if (operand !== null) {
-                    setDisplayText(eval(operand + displayText));
+            if (payload === "=") {
+                if (!isNaN(displayText)) {
+                    if (operand !== null) {
+                        setDisplayText(eval(operand + displayText));
+                        setOprand(null);
+                    }
+                }
+            }
+            if (payload === "CE") {
+                if (isOn) {
+                    setDisplayText("0");
                     setOprand(null);
+                    return;
+                }
+            } else if (payload === "OFF") {
+                console.log(isOn);
+                setIsOn(!isOn);
+            } else if (payload === "MRC" || payload === "M+" || payload === "M-") {
+                if (isOn) {
+                    setDisplayText("Isse kya hota hai?...");
+                }
+            } else if (payload === "1") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "2") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "3") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "4") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "5") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "6") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "7") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "8") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "9") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === "0") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return prev + payload;
+                        }
+                        return payload;
+                    });
+                }
+            } else if (payload === ".") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.includes(".")) {
+                                return prev;
+                            }
+                            return prev + payload;
+                        }
+                        return 0 + payload;
+                    });
+                }
+            } else if (payload === "Root") {
+                if (isOn) {
+                    setDisplayText((prev) => {
+                        if (prev !== "0" && !isNaN(prev % 1)) {
+                            return Math.sqrt(prev).toFixed(5);
+                        }
+                        return 0;
+                    });
                 }
             }
-        }
-        if (payload === "CE") {
-            if (isOn) {
-                setDisplayText("0");
-                setOprand(null);
-                return;
-            }
-        } else if (payload === "OFF") {
-            console.log(isOn);
-            setIsOn(!isOn);
-        } else if (payload === "MRC" || payload === "M+" || payload === "M-") {
-            if (isOn) {
-                setDisplayText("Isse kya hota hai?...");
-            }
-        } else if (payload === "1") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "2") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "3") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "4") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "5") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "6") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "7") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "8") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "9") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === "0") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return prev + payload;
-                    }
-                    return payload;
-                });
-            }
-        } else if (payload === ".") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        if (prev.includes(".")) {
-                            return prev;
-                        }
-                        return prev + payload;
-                    }
-                    return 0 + payload;
-                });
-            }
-        } else if (payload === "Root") {
-            if (isOn) {
-                setDisplayText((prev) => {
-                    if (prev !== "0" && !isNaN(prev % 1)) {
-                        return Math.sqrt(prev).toFixed(5);
-                    }
-                    return 0;
-                });
-            }
+        } catch (error) {
+            console.log(error.message);
         }
     };
     //#endregion
