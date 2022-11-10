@@ -27,16 +27,25 @@ export const ContextProvider = (props) => {
             if (isOn) {
                 play();
             }
-            if (payload === "+" || payload === "-" || payload === "/" || payload === "*" || payload === "%") {
+            if (
+                payload === "+" ||
+                payload === "-" ||
+                payload === "/" ||
+                payload === "*" ||
+                payload === "%"
+            ) {
                 if (!isNaN(displayText)) {
                     if (operand === null) {
                         setOprand(displayText + payload);
-                        setDisplayText("")
+                        setDisplayText("");
                         return;
-                    }
-                    else {
-                        setDisplayText(eval(operand + displayText))
-                        setOprand(null)
+                    } else {
+                        let result = eval(operand + displayText);
+                        if (toString(result).length > 10) {
+                            result = parseFloat(result).toExponential();
+                        }
+                        setDisplayText(result);
+                        setOprand(null);
                         return;
                     }
                 }
@@ -44,7 +53,11 @@ export const ContextProvider = (props) => {
             if (payload === "=") {
                 if (!isNaN(displayText)) {
                     if (operand !== null) {
-                        setDisplayText(eval(operand + displayText));
+                        let result = eval(operand + displayText);
+                        if (toString(result).length > 10) {
+                            result = parseFloat(result).toExponential();
+                        }
+                        setDisplayText(result);
                         setOprand(null);
                     }
                 }
@@ -66,6 +79,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -75,6 +91,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -84,6 +103,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -93,6 +115,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -102,6 +127,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -111,6 +139,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -120,6 +151,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -129,6 +163,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -138,6 +175,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;
@@ -147,6 +187,9 @@ export const ContextProvider = (props) => {
                 if (isOn) {
                     setDisplayText((prev) => {
                         if (prev !== "0" && !isNaN(prev % 1)) {
+                            if (prev.length === 18) {
+                                return prev;
+                            }
                             return prev + payload;
                         }
                         return payload;

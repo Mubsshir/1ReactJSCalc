@@ -1,17 +1,18 @@
 .keysContainer {
   height: 40em;
-  background-color: #797979;
+  background-color: #000000;
   width: 100%;
   margin: 8px 0;
   border-radius: 20px;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  padding: 0.5rem;
-  gap: 5px;
+  padding: 1rem;
+  gap: 15px;
 }
 
 .keys {
-  background-color: #080808;
+  position: relative;
+  background-color: #383636;
   border-radius: 15px;
   padding: 1.5rem;
   display: flex;
@@ -19,16 +20,28 @@
   justify-content: center;
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 0.6rem 0 #030303;
   font-weight: 600;
   font-size: 20px;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none;
+  filter: drop-shadow(5px 8px 1px rgb(102, 100, 100));
+  top: -5px;
+}
+.keys:hover,
+.keys:active {
+  top: 0;
+  filter: none;
 }
 #plusKey {
   grid-area: 5/4 / span 2 / span 1;
 }
 #CE {
   background-color: #f4670b;
+}
+
+@media screen and (max-width: 575px) {
+  .keys {
+    filter: drop-shadow(3px 5px 0 rgb(170, 159, 159));
+  }
 }
