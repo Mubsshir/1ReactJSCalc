@@ -73,7 +73,7 @@ export const ContextProvider = (props) => {
                 setIsOn(!isOn);
             } else if (payload === "MRC" || payload === "M+" || payload === "M-") {
                 if (isOn) {
-                    setDisplayText("Isse kya hota hai?...");
+                    setDisplayText("...");
                 }
             } else if (payload === "1") {
                 if (isOn) {
