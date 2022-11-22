@@ -41,9 +41,6 @@ export const ContextProvider = (props) => {
                         return;
                     } else {
                         let result = eval(operand + displayText);
-                        if (toString(result).length > 10) {
-                            result = parseFloat(result).toExponential();
-                        }
                         setDisplayText(result);
                         setOprand(null);
                         return;
@@ -54,9 +51,6 @@ export const ContextProvider = (props) => {
                 if (!isNaN(displayText)) {
                     if (operand !== null) {
                         let result = eval(operand + displayText);
-                        if (toString(result).length > 10) {
-                            result = parseFloat(result).toExponential();
-                        }
                         setDisplayText(result);
                         setOprand(null);
                     }
